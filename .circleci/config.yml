@@ -6,10 +6,20 @@ jobs:
       - image: cirrusci/flutter
     steps:
       - checkout
+
+      - restore_cache:
+          key: app-{{ checksum "pubspec.lock" }}
+
       - run: |
           flutter doctor
           flutter test
           flutter -v build apk
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: app-{{ checksum "pubspec.lock" }}
+
 
     # - persist_to_workspace:
     #       root: .
