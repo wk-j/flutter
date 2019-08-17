@@ -26,4 +26,7 @@ cd hello
 flutter emulators
 flutter emulators --launch apple_ios_simulator
 flutter run
+
+fluter build apk
+fluter build ios
 ```
