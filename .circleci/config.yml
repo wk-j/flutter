@@ -1,0 +1,52 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: cirrusci/flutter
+    steps:
+      - checkout
+      - run: |
+          cd hello
+          flutter doctor
+          flutter test
+          flutter -v build apk
+
+    # - persist_to_workspace:
+    #       root: .
+    #       paths:
+    #         - jar
+
+    # - store_artifacts:
+    #     path: jar
+
+  # publish-github-release:
+  #   docker:
+  #     - image: cibuilds/github:0.10
+
+  #   steps:
+  #     - attach_workspace:
+  #         at: /tmp
+
+  #     - run:
+  #         name: "Publish release on GitHub"
+  #         command: |
+  #           VERSION="0.1.0.${CIRCLE_BUILD_NUM}"
+  #           ghr \
+  #             -t ${GITHUB_TOKEN} \
+  #             -u ${CIRCLE_PROJECT_USERNAME} \
+  #             -r ${CIRCLE_PROJECT_REPONAME} \
+  #             -c ${CIRCLE_SHA1} \
+  #             -delete \
+  #             -recreate  \
+  #             ${VERSION}  \
+  #             /tmp/jar
+
+# workflows:
+#   version: 2
+#   main:
+#     jobs:
+#       - build
+#       - publish-github-release:
+#           requires:
+#             - build
