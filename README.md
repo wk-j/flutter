@@ -1,8 +1,7 @@
-## Flutter
+## Flutter [![CircleCI](https://circleci.com/gh/wk-j/flutter.svg?style=svg)](https://circleci.com/gh/wk-j/flutter)
 
-[![CircleCI](https://circleci.com/gh/wk-j/flutter.svg?style=svg)](https://circleci.com/gh/wk-j/flutter)
 
-- Download [SDK](https://flutter.dev/docs/get-started/install/macos)
+Download [SDK](https://flutter.dev/docs/get-started/install/macos)
 
 ## Android Studio + SDK
 
@@ -12,15 +11,9 @@ export ANDROID_HOME=/Users/wk/Library/Android/sdk
 flutter doctor --android-licenses
 ```
 
-## Path
-
-```bash
-/Users/wk/Library/Android/sdk/bin
-```
-
 ## Create
 
-```
+```bash
 flutter create --project-name hello -t app  --org wk  hello
 
 cd hello
