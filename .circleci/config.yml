@@ -7,7 +7,6 @@ jobs:
     steps:
       - checkout
       - run: |
-          cd hello
           flutter doctor
           flutter test
           flutter -v build apk
