@@ -1,9 +1,6 @@
 ## Flutter
 
-```bash
-flutter precache
-flutter doctor
-```
+- Download [SDK](https://flutter.dev/docs/get-started/install/macos)
 
 ## Android Studio + SDK
 
@@ -11,12 +8,22 @@ flutter doctor
 brew cask install android-studio
 export ANDROID_HOME=/Users/wk/Library/Android/sdk
 flutter doctor --android-licenses
-
-flutter emulator --create
 ```
 
 ## Path
 
-```
+```bash
 /Users/wk/Library/Android/sdk/bin
+```
+
+## Create
+
+```
+flutter create --project-name hello -t app  --org wk  hello
+
+cd hello
+
+flutter emulators
+flutter emulators --launch apple_ios_simulator
+flutter run
 ```
